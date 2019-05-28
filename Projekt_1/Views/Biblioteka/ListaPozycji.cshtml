@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Projekt_1.Models.Autorzy>
+@{
+    ViewBag.Title = "ListaPozycji";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+}
+
+<div class="col col-lg-8">
+    <div style="padding-top:3rem">
+        <h2>Lista Pozycji</h2>
+    </div>
+    @if (!Model.Any())
+    {
+        <p>
+            Brak pozycji
+        </p>
+    }
+    else
+    {<div style="padding-top:2rem">
+            <table id="autorzy" class="table table-condensed">
+                <thead>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                </thead>
+                <tbody>
+                    @foreach (var autorzy in Model)
+                    {
+                        <tr>
+                            <td>@autorzy.Imie</td>
+                            <td>@autorzy.Nazwisko</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>}
+</div>
+

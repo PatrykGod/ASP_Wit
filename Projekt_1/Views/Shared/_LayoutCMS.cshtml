@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "_LayoutCMS";
+}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Panel Administracyjny</title>
+        @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/Content/css2")
+        <!-- Custom fonts for this template-->
+        <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <!-- Custom styles for this template-->
+        <link href="~/Content/css/sb-admin-2.min.css" rel="stylesheet">
+
+    </head>
+    <body id="page-top">
+
+        <!------------------------------------------------- Panel boczny ------------------------------------------------->
+        <div id="wrapper">
+            <!-- Panel boczny -->
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <!-- Panel Boczny Logo -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                    </div>
+                    <div class="sidebar-brand-text mx-3">Panel Administracyjny</div>
+                </a>
+                <!-- Linia -->
+                <hr class="sidebar-divider my-0">
+                <!-- Strona Główna -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">
+                        
+                        <i class="fas fa-fw fa-link"></i>
+                        <span>Strona główna</span>
+                    </a>
+                </li>
+                <!-- Linia -->
+                <hr class="sidebar-divider">
+                <!-- Panel boczny - Użytkownicy -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-user-alt"></i>
+                        <span>Użytkownicy</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Opcje użytkowników:</h6>
+                            @Html.ActionLink("Dodaj użytkownika", "AddUser", "Panel", new { area = "" }, new { @class = "collapse-item" })
+                            @Html.ActionLink("Edytuj użytkownika", "EditUser", "Panel", new { area = "" }, new { @class = "collapse-item" })
+                            @Html.ActionLink("Edytuj role", "EditRole", "Panel", new { area = "" }, new { @class = "collapse-item" })
+                        </div>
+                    </div>
+                </li>
+                <!-- Panel boczny - Artykuły -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fas fa-fw fa-hand-paper"></i>
+                        <span>Artykuły</span>
+                    </a>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Opcje Artykułów:</h6>
+                            @Html.ActionLink("Lista artykułów", "ListaArtykulow", "Artykul", new { area = "" }, new { @class = "collapse-item" })
+                            @Html.ActionLink("Dodaj artykuł", "DodajArtykul", "Artykul", new { area = "" }, new { @class = "collapse-item" })
+                            @Html.ActionLink("Dodaj kategorię", "DodajKategorie", "Artykul", new { area = "" }, new { @class = "collapse-item" })
+                            @Html.ActionLink("Edytuj Artykuł", "EdytujArtykul", "Artykul", new { area = "" }, new { @class = "collapse-item" })
+                        </div>
+                    </div>
+                </li>
+                <!-- Panel boczny - Biblioteka -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                        <i class="fas fa-fw fa-book"></i>
+                        <span>Biblioteka</span>
+                    </a>
+                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Opcje Biblioteki:</h6>
+                            @Html.ActionLink("Dodaj wydanie", "DodajWydanie", "Biblioteka", new { area = "" }, new { @class = "collapse-item" })
+                            <hr class="sidebar-divider" style="background-color:black">
+                            @Html.ActionLink("Dodaj Ksiażkę", "DodajKsiazke", "Biblioteka", new { area = "" }, new { @class = "collapse-item" })
+                            @Html.ActionLink("Dodaj Autora", "DodajAutora", "Biblioteka", new { area = "" }, new { @class = "collapse-item" })
+                            @Html.ActionLink("Dodaj Wydawnictwo", "DodajWydawnictwo", "Biblioteka", new { area = "" }, new { @class = "collapse-item" })
+                            <hr class="sidebar-divider" style="background-color:black">
+                            @Html.ActionLink("Lista pozycji", "ListaPozycji", "Biblioteka", new { area = "" }, new { @class = "collapse-item" })
+                        </div>
+                    </div>
+                </li>
+                <!-- Panel boczny - Dodatkowe -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInne" aria-expanded="true" aria-controls="collapseInne">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Dodatkowe</span>
+                    </a>
+                    <div id="collapseInne" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Dodatkowe:</h6>
+                            @Html.ActionLink("Plan Zajęć", "Plan", "PlanZajec", new { area = "" }, new { @class = "collapse-item" })
+                            @Html.ActionLink("Galeria Zdjęć", "GaleriaZdjec", "Galeria", new { area = "" }, new { @class = "collapse-item" })
+                        </div>
+                    </div>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+                <footer class="sticky-footer bg-transparent">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span style="color:white">Copyright &copy; Godlewski Patryk</span>
+                        </div>
+                    </div>
+                </footer>
+            </ul>
+
+            <!----------------------------------------------- Koniec Panelu bocznego ----------------------------------------------->
+            <!-- Content Wrapper -->
+            <!-- End of Topbar -->
+            <!-- Begin Page Content -->
+
+            <div class="container-fluid" style="padding-top:10px">
+                @RenderBody()
+            </div>
+        </div>
+       
+      
+        <!-- Bootstrap core JavaScript-->
+        <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+        <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+        <script src="~/Content/js/sb-admin-2.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="~/Content/vendor/chart.js/Chart.min.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="~/Content/js/demo/chart-area-demo.js"></script>
+        <script src="~/Content/js/demo/chart-pie-demo.js"></script>
+        @Scripts.Render("~/bundles/lib")
+        @RenderSection("scripts", required: false)
+
+    </body>
+

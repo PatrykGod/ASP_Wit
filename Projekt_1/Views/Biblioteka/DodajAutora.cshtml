@@ -1,0 +1,31 @@
+﻿@model Projekt_1.ViewModel.AutorzyViewModel
+@{
+                /**/
+
+                ViewBag.Title = "DodajAutora";
+                Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+}
+
+@using (Html.BeginForm("CreateAutor", "Biblioteka"))
+{
+    <div class="col col-lg-2" style="padding-top:3rem">
+        <h2>Dodaj Autora</h2>
+        <hr />
+        <div class=form-group>
+            @Html.LabelFor(m => m.Autorzy.Imie)
+            @Html.TextBoxFor(m => m.Autorzy.Imie, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Autorzy.Imie)
+        </div>
+        <div class=form-group>
+            @Html.LabelFor(m => m.Autorzy.Nazwisko)
+            @Html.TextBoxFor(m => m.Autorzy.Nazwisko, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Autorzy.Nazwisko)
+        </div>
+
+        @Html.HiddenFor(m => m.Autorzy.Id);
+
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+
+    </div>
+}
+
